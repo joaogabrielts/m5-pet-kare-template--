@@ -20,7 +20,9 @@ def create_multiple_pets(
 
     group_obj = Group.objects.create(**group_data)
 
-    pets_objects = [Pet.objects.create(**pet_dict, group=group_obj) for pet_dict in pets_data]
+    pets_objects = [
+        Pet.objects.create(**pet_dict, group=group_obj) for pet_dict in pets_data
+    ]
 
     if traits_data:
         for trait_dict in traits_data:
